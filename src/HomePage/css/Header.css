@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.header-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.navigation-bar-div button {
+    background: transparent;
+    margin-left: 15px;
+    padding: 5px 20px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.navigation-bar-div button:hover {
+    color: aqua;
+}
+
+
+.main {
+    max-width: 80%;
+    margin: auto;
+    text-align: center;
+    padding: 50px 10px;
+}
+
+.tabs {
+    display: flex;
+}
+
+.tabs button {
+    padding: 10px 0;
+    width: 33.3%;
+    background: transparent;
+    border-top: 1px solid green;
+    border-left: 1px solid green;
+    border-right: 1px solid green;
+    border-bottom: none;
+
+}
+
+.searchField {
+    height: 300px;
+    background: yellow;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchWrapper {
+    width: inherit;
+}
+
+.searchWrapper input, .searchWrapper button {
+    padding: 10px;
+}
+.searchWrapper input {
+    width: 50%;
+}
+
+.searchWrapper button {
+    width: 25%;
+
+}
