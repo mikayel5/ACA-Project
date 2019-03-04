@@ -3,15 +3,16 @@ import './css/Header.css';
 
 class Content extends Component {
 
-    // eventHandler = (event) => {
-    //     event.target.parentNode.childNodes.forEach(button => {
-    //         if (button === event.target) {
-    //             button.style.backgroundColor = "red"
-    //         } else {
-    //             button.style.background = "transparent"
-    //         }
-    //     });
-    // }
+    eventHandler = (event) => {
+        event.target.parentNode.childNodes.forEach(button => {
+            if (button === event.target) {
+                button.style.backgroundColor = "red"
+            } else {
+                button.style.background = "transparent"
+            }
+        });
+        
+    }
 
     render (){
         return (
