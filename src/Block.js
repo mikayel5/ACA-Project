@@ -4,32 +4,28 @@ import './index.css';
 class Block extends Component{
     constructor (props) {
         super(props)
+        this.state = {
+            url: this.props.url,
+            title: this.props.title
+        }
     }  
 
 
     
-    render (){
-        return(
-        <div className = "blocks">
-            <div className = "info">
-                <div className = "video">
-                <iframe width="300" height="200"
-                        src={this.props.url}
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                 </iframe>
-    
-                </div>
-                <div className = "metadata">
-                    <p className = "title"></p>
-                    <p className = "description"></p>
-
-                </div>
-
+    render () {
+        return ( 
+        <>
+            <div 
+                className="video"
+            >
+                <iframe title={this.state.title}width="300" height="300"
+                    src={this.state.url}
+                    frameBorder="0" 
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                    allowFullScreen>
+                </iframe>
             </div>
-
-        </div>
+        </>
         )
     }
 }
