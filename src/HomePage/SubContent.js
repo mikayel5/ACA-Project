@@ -53,6 +53,7 @@ class Subcontent extends Component {
         .then(res => res.json())
         .then(myJson => myJson.results.trackmatches.track[0].name)
         .then(function(name) {
+            this.setState({iframeTitle: this.name})
 	        fetch(`https://www.googleapis.com/youtube/v3/search?part=id&maxResults=5&order=relevance&q=${name}&key=AIzaSyDP7ztlVJ8pjrlFUaCsBMBtbjghLogw2fg`)
 	            .then(response => response.json())
                 .then(myJson =>  {

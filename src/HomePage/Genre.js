@@ -1,52 +1,59 @@
 import React, {Component} from 'react';
 import './css/Header.css';
-import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
+import Block from '../Block';
 
 class Genre extends Component {
+    constructor() {
+        super()
+        this.state = {
+            videoIdArray: [],
+            iframeTitle: "",
+        }
+    }
+
+    genreSearchClick = (genre) => {
+        const videoIdArray = [];
+        this.setState({videoIdArray: []})
+        fetch(`http://ws.audioscrobbler.com/2.0/?method=tag.gettoptracks&tag=${genre}&api_key=49edeb8bf7e07fe071335277a648f207&format=json`)
+        .then(res => res.json())
+        .then(data => data.tracks.track)
+        .then(function(tracksArray) 
+                {
+                    tracksArray.forEach(track => {
+                        fetch(`https://www.googleapis.com/youtube/v3/search?part=id&maxResults=1&order=relevance&q=${track.name}${track.artist.name}&key=AIzaSyDP7ztlVJ8pjrlFUaCsBMBtbjghLogw2fg`)
+                        .then(res => res.json())
+                        .then(data => {
+                            // console.log(data.items[0].id.videoId)
+                            videoIdArray.push(data.items[0].id.videoId)
+                            return videoIdArray
+                        })
+                        .then(videoIdArray => this.setState({videoIdArray,}))
+                    })
+                }.bind(this)
+        )
+    }
 
     render () {
         return (
-            <div className="genres">
-                <Router>
-                    <NavLink to="/pop">
-                        <button>POP</button>
-                    </NavLink>
-                    <NavLink to="/hiphop">
-                        <button>HIP-HOP</button>
-                    </NavLink>
-                    <NavLink to="/rock">
-                        <button>ROCK</button>
-                    </NavLink>
-                    <NavLink to="/rap">
-                        <button>RAP</button>
-                    </NavLink>
-                    <NavLink to="/jazz">
-                        <button>JAZZ</button>
-                    </NavLink>
-                    <NavLink to="/electronic">
-                        <button>ELECTRONIC</button>
-                    </NavLink>
-                    <NavLink to="/classical">
-                        <button>CLASSICAL</button>
-                    </NavLink>
-                    <NavLink to="/soundtrack">
-                        <button>SOUNDTRACK</button>
-                    </NavLink>
-                    <Route path="/pop"/>
-                    <Route path="/hiphop"/>
-                    <Route path="/rock"/>
-                    <Route path="/rap"/>
-                    <Route path="/jazz"/>
-                    <Route path="/electronic"/>
-                    <Route path="/classical"/>
-                    <Route path="/soundtrack"/>
-                </Router>
-            </div>
+            <>
+                <div className="genres">
+                    <button onClick={() => this.genreSearchClick("pop")}>POP</button>
+                    <button onClick={() => this.genreSearchClick("Hip-Hop")}>HIP-HOP</button>
+                    <button onClick={() => this.genreSearchClick("rock")}>ROCK</button>
+                    <button onClick={() => this.genreSearchClick("rap")}>RAP</button>
+                    <button onClick={() => this.genreSearchClick("jazz")}>JAZZ</button>
+                    <button onClick={() => this.genreSearchClick("electronic")}>ELECTRONIC</button>
+                    <button onClick={() => this.genreSearchClick("classical")}>CLASSICAL</button>
+                    <button onClick={() => this.genreSearchClick("soundtrack")}>SOUNDTRACK</button>
+                </div>
+                <div className='video_container'>
+                    {
+                        this.state.videoIdArray.map((id, index) => <Block key={index} url={`https://www.youtube.com/embed/${id}`}/>)
+                    }
+                </div>
+            </>
         )
     }
-}
-function pop() {
-        
 }
 
 export default Genre;
