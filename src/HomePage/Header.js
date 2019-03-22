@@ -7,7 +7,7 @@ class Header extends Component {
         return (
             <div className="header-div">
                 <div className="logo-div">
-                    wlkdhvkjbj
+                Fake Spotify )
                 </div>
                 <div className="navigation-bar-div">
                     <button>Home</button>

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './css/Header.css';
 import Block from '../Block'
+import ArtistInfo from './ArtistInfo';
 
 class Subcontent extends Component {
     constructor(props) {
@@ -12,9 +13,13 @@ class Subcontent extends Component {
             videoId: [],
             activeContent: this.props.activecontent,
             iframeTitle: "",
+            artistInfo: null,
         }
     }
 
+    SendInput = () => {
+        this.setState({artistInfo: this.state.inputvalue})
+    }
 
 
     getInputValue = (event) => {
@@ -73,14 +78,22 @@ class Subcontent extends Component {
     }
 
     render() {
+        const {placeholder,
+            url,
+            inputvalue,
+            artistInfo,
+            videoId,
+            activeContent,
+            iframeTitle} = this.state
         return (
             <>
                 <div className="searchField">
                     <div className="searchWrapper">
                         <input placeholder={this.state.placeholder} onChange={this.getInputValue} value={this.state.inputvalue}></input>
-                        <button onClick={this.state.activeContent === "artist" ? this.searchByArtist.bind(this) : this.searchBySong.bind(this)}>Search</button>
+                        <button onMouseDown={()=>this.SendInput()} onClick={this.state.activeContent === "artist" ? this.searchByArtist.bind(this) : this.searchBySong.bind(this)}>Search</button>
                     </div>
                 </div>
+                {artistInfo !== null  && <ArtistInfo inputInfo={artistInfo}/>}
                 <div className='video_container'>
                     {
                         this.state.videoId.map((id, index) => <Block key={index}title={this.state.iframeTitle}url={`https://www.youtube.com/embed/${id}`}/>)

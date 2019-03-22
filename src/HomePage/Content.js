@@ -14,7 +14,7 @@ class Content extends Component {
     }
     render () {
         return (
-            <div className="main">
+            <div className="main" style={{position: 'relative'}}>
                     <Router>
                         <div className="tabs">
                             <NavLink to="/artist" className="link artist" activeClassName="active">
