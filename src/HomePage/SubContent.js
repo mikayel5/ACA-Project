@@ -78,7 +78,7 @@ class Subcontent extends Component {
                 <div className="searchField">
                     <div className="searchWrapper">
                         <input placeholder={this.state.placeholder} onChange={this.getInputValue} value={this.state.inputvalue}></input>
-                        <button onClick={this.state.activeContent === "artist" ? this.searchByArtist.bind(this) : this.searchBySong.bind(this)}>Search</button>
+                        <button onClick={this.state.activeContent === "artist" ? this.searchByArtist : this.searchBySong }>Search</button>
                     </div>
                 </div>
                 <div className='video_container'>

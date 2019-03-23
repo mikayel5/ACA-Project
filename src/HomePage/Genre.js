@@ -18,18 +18,17 @@ class Genre extends Component {
         .then(res => res.json())
         .then(data => data.tracks.track)
         .then(function(tracksArray) 
-                {
-                    tracksArray.forEach(track => {
-                        fetch(`https://www.googleapis.com/youtube/v3/search?part=id&maxResults=1&order=relevance&q=${track.name}${track.artist.name}&key=AIzaSyDP7ztlVJ8pjrlFUaCsBMBtbjghLogw2fg`)
-                        .then(res => res.json())
-                        .then(data => {
-                            // console.log(data.items[0].id.videoId)
-                            videoIdArray.push(data.items[0].id.videoId)
-                            return videoIdArray
-                        })
-                        .then(videoIdArray => this.setState({videoIdArray,}))
+            {
+                tracksArray.forEach(track => {
+                    fetch(`https://www.googleapis.com/youtube/v3/search?part=id&maxResults=1&order=relevance&q=${track.name}${track.artist.name}&key=AIzaSyDP7ztlVJ8pjrlFUaCsBMBtbjghLogw2fg`)
+                    .then(res => res.json())
+                    .then(data => {
+                    videoIdArray.push(data.items[0].id.videoId)
+                        return videoIdArray
                     })
-                }.bind(this)
+                    .then(videoIdArray => this.setState({videoIdArray,}))
+                })
+            }.bind(this)
         )
     }
 
