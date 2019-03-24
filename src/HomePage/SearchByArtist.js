@@ -1,4 +1,13 @@
 import React, {Component} from 'react';
 
 
-class Search
+class SearchByArtist extends Component {
+
+
+
+    render () {
+        return (
+            
+        )
+    }
+}

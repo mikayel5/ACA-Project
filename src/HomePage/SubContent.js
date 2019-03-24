@@ -15,8 +15,6 @@ class Subcontent extends Component {
         }
     }
 
-
-
     getInputValue = (event) => {
         this.setState({inputvalue: event.target.value})
     }
