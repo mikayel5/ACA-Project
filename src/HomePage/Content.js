@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import './css/Header.css';
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
-import Subcontent from './SubContent';
 import Genre from './Genre';
+import SearchByArtist from './SearchByArtist';
+import SearchBySong from './SearchBySong';
 
 class Content extends Component {
 
@@ -42,13 +43,13 @@ class Content extends Component {
 
 function ArtistSearch() {
     return (
-        <Subcontent placeholdervalue="Search song by artist" activecontent="artist" />
+        <SearchByArtist placeholdervalue="Search song by artist"/>
     )
 }
 
 function SongSearch() {
     return (
-        <Subcontent placeholdervalue="Search song by song name" activecontent="song"/>
+        <SearchBySong placeholdervalue="Search song by song name"/>
     )
 }
 
