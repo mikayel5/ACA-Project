@@ -15,17 +15,17 @@ class SearchBySong extends Component {
 
     getInputValue = (event) => {
         this.setState({inputvalue: event.target.value})
-    }
+    };
 
     searchBySong = () => {
         const videoId = [];
-        this.setState({videoId: []})
+        this.setState({videoId: []});
         fetch(`http://ws.audioscrobbler.com/2.0/?method=track.search&track=${this.state.inputvalue}&api_key=49edeb8bf7e07fe071335277a648f207&format=json`)
         .then(res => res.json())
         .then(myJson => 
-            {
+
                 myJson.results.trackmatches.track[0].name
-            }
+
             )
         .then(function(name) {
             this.setState({iframeTitle: this.name})

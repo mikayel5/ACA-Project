@@ -12,7 +12,7 @@ class SearchArtistBio extends Component {
     
     render() {
         return (
-        <div>
+        <div className="artist-container">
             <div className = "artist_img">
                 <img src={this.state.artistItem_img} />
             </div>
