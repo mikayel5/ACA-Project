@@ -10,6 +10,7 @@ class SearchBySong extends Component {
             placeholder: this.props.placeholdervalue,
             inputvalue: "",
             videoId: [],
+            trackArray: [],
         }
     }
 
@@ -24,7 +25,9 @@ class SearchBySong extends Component {
         .then(res => res.json())
         .then(myJson => 
             {
-                myJson.results.trackmatches.track[0].name
+                const trackArray = myJson.results.trackmatches.track; 
+                this.setState({ trackArray, })
+                return trackArray[0].name;
             }
             )
         .then(function(name) {

@@ -6,12 +6,28 @@ class Block extends Component{
         super(props)
         this.state = {
             url: this.props.url,
-            title: this.props.title
+            title: this.props.title,
+            urlName: this.props.name,
         }
     }  
-
-
     
+    youtube = () => {
+        fetch(`https://www.googleapis.com/youtube/v3/search?part=id&maxResults=5&order=relevance&q=${this.state.urlName}&key=AIzaSyDP7ztlVJ8pjrlFUaCsBMBtbjghLogw2fg`)
+                .then(response => response.json())
+                .then(myJson =>  {
+                    myJson.items.forEach(item =>  
+                        {
+                            if(item.id.videoId) {
+                            videoId.push(item.id.videoId)  
+                            }
+                            
+                        })
+                        return videoId;
+                    }
+                    )
+                .then(ids => this.setState({ videoId: ids })) 
+    }
+
     render () {
         return ( 
         <>
