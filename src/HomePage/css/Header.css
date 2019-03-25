@@ -141,3 +141,8 @@ body {
     border-radius: 150px;
     margin-right: 50px;
 }
+
+.song-item {
+    width: 200px;
+    height: 200px;
+}
