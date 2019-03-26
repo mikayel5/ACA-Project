@@ -19,9 +19,6 @@ class Block extends Component{
         return ( 
         <>
             <div className="video">
-                <div>
-                    <button>x</button>
-                </div>
                 <iframe title={this.state.title} width="300" height="300"
                     src={this.state.url}
                     frameBorder="0" 

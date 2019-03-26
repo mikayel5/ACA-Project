@@ -243,3 +243,8 @@ body {
     height: 100%;
     object-fit: cover;
 }
+.asas {
+    position: absolute;
+    top: 0;
+    right: 0;
+}

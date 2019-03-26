@@ -11,7 +11,11 @@ class SongContainer extends Component {
             songname: this.props.songname,
             videoId: [],
             isLoaded: false,
+            videoIdChanged: false,
         }
+    }
+    closeYoutube = () => {
+        this.setState({videoId: []})
     }
     goYoutube = () => {
         const videoId = [];
@@ -51,21 +55,20 @@ class SongContainer extends Component {
                     </div>
                     <button onClick={this.goYoutube} className="btn go-youtube">Listen</button>
                 </div>
-                {   
-                    this.state.isLoaded ?
-                    <iframe title={this.state.songname} width="300" height="300"
-                        src={`https://www.youtube.com/embed/${this.state.videoId}`}
-                        frameBorder="0" 
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-                        allowFullScreen>
-                    </iframe> : null
+                <div className="asas">
+                    
+                {
+                    this.state.videoId.map(id => {
+                        return (
+                            <>
+                                <button onClick={this.closeYoutube}>X</button>
+                                <Block url={`https://www.youtube.com/embed/${id}`}/>
+                            </>
+                    
+                        )
+                    }) 
                 }
-                {/* {
-                    this.state.isLoaded ? 
-                        <div>
-                            <Block url={`https://www.youtube.com/embed/${this.state.videoId}`}/>
-                        </div> : null
-                } */}
+                </div>
             </>
         )
     }
