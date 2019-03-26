@@ -7,7 +7,7 @@ class SongContainer extends Component {
         super(props);
         this.state = {
             artistimg: this.props.artistimg,
-            artistname: this.props.artisname, 
+            artistname: this.props.artistname, 
             songname: this.props.songname,
             videoId: [],
             isLoaded: false,
@@ -16,7 +16,9 @@ class SongContainer extends Component {
     goYoutube = () => {
         const videoId = [];
         this.setState({videoId, isLoaded: false,})
-        fetch(`https://www.googleapis.com/youtube/v3/search?part=id&maxResults=1&order=relevance&q=${this.state.songname}&key=AIzaSyDP7ztlVJ8pjrlFUaCsBMBtbjghLogw2fg`)
+        const searchText = this.state.artistname + this.state.songname
+        console.log(searchText)
+        fetch(`https://www.googleapis.com/youtube/v3/search?part=id&maxResults=1&order=relevance&q=${searchText}&key=AIzaSyDP7ztlVJ8pjrlFUaCsBMBtbjghLogw2fg`)
                 .then(response => response.json())
                 .then(myJson =>  {
                     myJson.items.forEach(item =>  
@@ -49,11 +51,21 @@ class SongContainer extends Component {
                     </div>
                     <button onClick={this.goYoutube} className="btn go-youtube">Listen</button>
                 </div>
-                <div>
-                    {
-                        this.state.isLoaded ? <Block url={`https://www.youtube.com/embed/${this.state.videoId}`}/> : null
-                    }
-                </div>
+                {   
+                    this.state.isLoaded ?
+                    <iframe title={this.state.songname} width="300" height="300"
+                        src={`https://www.youtube.com/embed/${this.state.videoId}`}
+                        frameBorder="0" 
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                        allowFullScreen>
+                    </iframe> : null
+                }
+                {/* {
+                    this.state.isLoaded ? 
+                        <div>
+                            <Block url={`https://www.youtube.com/embed/${this.state.videoId}`}/>
+                        </div> : null
+                } */}
             </>
         )
     }

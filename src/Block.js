@@ -9,14 +9,19 @@ class Block extends Component{
             url: this.props.url,
         }
     }
+
+    videoClose = () => {
+        
+    }
     
 
     render () {
         return ( 
         <>
-            <div 
-                className="video"
-            >{console.log("rendered")}
+            <div className="video">
+                <div>
+                    <button>x</button>
+                </div>
                 <iframe title={this.state.title} width="300" height="300"
                     src={this.state.url}
                     frameBorder="0" 

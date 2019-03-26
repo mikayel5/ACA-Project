@@ -15,7 +15,7 @@ class SearchBySong extends Component {
 
     getInputValue = (event) => {
         this.setState({inputvalue: event.target.value})
-    }
+    };
 
     searchBySong = () => {
         this.setState({trackArray: []})
@@ -25,26 +25,7 @@ class SearchBySong extends Component {
             {
                 const track = myJson.results.trackmatches.track; 
                 this.setState({ trackArray: track,})
-            }
-            )
-        // .then(function(name) {
-        //     this.setState({iframeTitle: this.name})
-        //     fetch(`https://www.googleapis.com/youtube/v3/search?part=id&maxResults=5&order=relevance&q=${name}&key=AIzaSyDP7ztlVJ8pjrlFUaCsBMBtbjghLogw2fg`)
-        //         .then(response => response.json())
-        //         .then(myJson =>  {
-        //             myJson.items.forEach(item =>  
-        //                 {
-        //                     if(item.id.videoId) {
-        //                     videoId.push(item.id.videoId)  
-        //                     }
-                            
-        //                 })
-        //                 return videoId;
-        //             }
-        //             )
-        //         .then(ids => this.setState({ videoId: ids }))               
-        //     }.bind(this)
-        // )
+            })
     }
 
     render() {

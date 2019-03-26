@@ -6,9 +6,18 @@ button {
     cursor: pointer;
 }
 
+.fitted-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 body {
     margin: 0;
     padding: 0;
+    background: url("../../img/bg.png") no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .header-div {
@@ -16,6 +25,14 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+    /*background: url("../../img/bg.png");*/
+    background: #000;
+    background-size: cover;
+}
+
+.header-div .fa.fa-compact-disc {
+    color: #fff;
+    font-size: 40px;
 }
 
 .navigation-bar-div button {
@@ -26,10 +43,11 @@ body {
     border: none;
     outline: none;
     transition: 0.3s ease;
+    color: #fff;
 }
 
 .navigation-bar-div button:hover {
-    color: aqua;
+    transform: scale(1.15);
 }
 
 
@@ -49,16 +67,11 @@ body {
     padding: 10px 0;
     width: 33.3%;
     background: transparent;
-    border-top: 1px solid green;
-    border-left: 1px solid green;
-    border-right: 1px solid green;
-    border-bottom: none;
+
 
 }
 
 .searchField {
-    height: 300px;
-    background: yellow;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -67,17 +80,37 @@ body {
 
 .searchWrapper {
     width: inherit;
+    margin-top: 20px;
 }
 
 .searchWrapper input, .searchWrapper button {
     padding: 10px;
 }
 .searchWrapper input {
-    width: 50%;
+    border: solid 1px transparent;
+    border-image: linear-gradient(45deg, #AA3A67, #FB806B);
+    border-image-slice: 1;
+    background: linear-gradient(45deg, #AA3A67, #FB806B);
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-fill-color: transparent;
+    outline: none;
+    width: 75%;
+    background: transparent;
+    color: #fff;
+    font-size: 19px;
 }
 
 .searchWrapper button {
+    background-image: linear-gradient(45deg, #AA3A67, #FB806B);
+
+    border: none;
+    outline: none;
     width: 25%;
+    height: 100%;
+    font-size: 20px;
+    box-sizing: border-box;
+    font-weight: bold;
 
 }
 /* .aaa {
@@ -94,26 +127,33 @@ body {
 .link {
     width: 33.3%;
     background: transparent;
-    border-top: 1px solid green;
-    border-left: 1px solid green;
-    border-right: 1px solid green;
-    border-bottom: none;
+
 }
 
 .link button {
+    border: solid 1px transparent;
+    border-image: linear-gradient(45deg, #AA3A67, #FB806B);
+    border-image-slice: 1;
+    background: linear-gradient(45deg, #AA3A67, #FB806B);
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-fill-color: transparent;
     padding: 20px 0;
     width: 100%;
     background: transparent;
-    border-top: 1px solid green;
-    border-left: 1px solid green;
-    border-right: 1px solid green;
-    border-bottom: none;
+    color: #fff;
+    font-size: 18px;
+    outline: none;
+
 }
 
 .active {
-    background-color: red;
+    background-color: #00000042;
 }
-
+.active button {
+    color: #FB806B;
+    font-weight: bold;
+}
 .video_container {
     display: flex;
     flex-wrap: wrap;
@@ -126,8 +166,6 @@ body {
 
 .genres {
     width: 100%;
-    height: 300px;
-    background-color: yellow;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -143,6 +181,65 @@ body {
 }
 
 .song-item {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
+    margin: 15px;
+    outline: none;
+    background: #4b223aa1;
+    padding: 10px 10px;
+    text-align: center;
+    color: #fff;
+    border: none;
+    width: 160px;
+    font-size: 20px;
+}
+
+.intro {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.intro-small {
+    color: #fff;
+    font-size: 17px;
+}
+
+.p-title {
+    font-size: 45px;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #FB806B 0%, #AA3A67 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.artist-container {
+    clear: both;
+    color: #fff;
+    text-align: justify;
+    background: #0000007d;
+    padding: 20px;
+    margin-top: 20px;
+    font-size: 17px;
+}
+
+
+.artist_img {
+    margin-right: 20px;
+    float: left;
+    width: 280px;
+    height: 280px;
+    border: solid 4px transparent;
+    border-image: linear-gradient(45deg, #FB806B, #AA3A67);
+    border-image-slice: 1;
+    background: linear-gradient(45deg, #FB806B, #AA3A67);
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.artist_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
