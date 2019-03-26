@@ -19,7 +19,7 @@ class SearchBySong extends Component {
     };
 
     closeYoutube = () => {
-        this.setState({videoId: []})
+        this.setState({youtubeVideoID: null})
     }
 
     foo = (searchText) => {
@@ -62,7 +62,7 @@ class SearchBySong extends Component {
                 {
                     this.state.youtubeVideoID  &&  
                     <> 
-                        <button>X</button>
+                        <button onClick={this.closeYoutube}>X</button>
                         <Block url={`https://www.youtube.com/embed/${ this.state.youtubeVideoID }`}/>
                     </>
                 }
