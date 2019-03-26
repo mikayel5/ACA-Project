@@ -4,12 +4,6 @@ import './css/Header.css';
 class Subcontent extends Component {
     constructor(props) {
         super(props);
-        // this.state = {
-        //     placeholder: this.props.placeholder,
-        //     onclick: this.props.onclick,
-        //     onchange: this.props.onchange,
-        //     inputvalue: this.props.inputvalue,
-        // }
     }
 
     

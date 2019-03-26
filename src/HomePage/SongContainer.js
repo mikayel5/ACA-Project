@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Block from '../Block';
 import './css/Header.css';
 
 class SongContainer extends Component {
