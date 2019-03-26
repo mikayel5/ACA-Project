@@ -30,7 +30,7 @@ class SongContainer extends Component {
                     <div className="song-name">
                         {this.props.songname}
                     </div>
-                    <button onClick={this.goYoutube} className="btn go-youtube">Listen</button>
+                    <button onClick={this.goYoutube} className="btn go-youtube"><i className="fa fa-play"></i> </button>
                 </div>
             </>
         )

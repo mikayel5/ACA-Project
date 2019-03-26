@@ -10,7 +10,7 @@ class SearchBySong extends Component {
         this.state = {
             inputvalue: "",
             trackArray: [], 
-            youtubeVideoID: null,
+            youtubeVideoID: null
         }
     }
 
@@ -19,7 +19,7 @@ class SearchBySong extends Component {
     };
 
     closeYoutube = () => {
-        this.setState({youtubeVideoID: null})
+        this.setState({videoId: []})
     }
 
     foo = (searchText) => {
@@ -44,10 +44,11 @@ class SearchBySong extends Component {
     }
 
     render() {
+        console.log(this.state.youtubeVideoID)
         return (
             <> 
                 <SubContent placeholder={this.props.placeholder} onclick={this.searchBySong} onchange={this.getInputValue} value={this.state.inputvalue}/>
-                <div className='video_container'>
+                <div className='song_container'>
                     {
                         this.state.trackArray.map((track, index) => <SongContainer
                                 key={index}
@@ -61,7 +62,7 @@ class SearchBySong extends Component {
                 {
                     this.state.youtubeVideoID  &&  
                     <> 
-                        <button onClick={this.closeYoutube}>X</button>
+                        <button>X</button>
                         <Block url={`https://www.youtube.com/embed/${ this.state.youtubeVideoID }`}/>
                     </>
                 }
