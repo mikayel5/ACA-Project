@@ -7,12 +7,6 @@ import SearchBySong from './SearchBySong';
 
 class Content extends Component {
 
-    constructor (props) {
-        super(props)
-        this.state = { 
-            videoId: [],
-        };      
-    }
     render () {
         return (
             <div className="main">

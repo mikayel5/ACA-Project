@@ -190,7 +190,6 @@ body {
     text-align: center;
     color: #fff;
     border: none;
-    width: 160px;
     font-size: 20px;
 }
 
@@ -245,6 +244,6 @@ body {
 }
 .asas {
     position: absolute;
-    top: 0;
+    top: 20%;
     right: 0;
 }

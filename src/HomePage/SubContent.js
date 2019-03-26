@@ -4,12 +4,12 @@ import './css/Header.css';
 class Subcontent extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            placeholder: this.props.placeholder,
-            onclick: this.props.onclick,
-            onchange: this.props.onchange,
-            inputvalue: this.props.inputvalue,
-        }
+        // this.state = {
+        //     placeholder: this.props.placeholder,
+        //     onclick: this.props.onclick,
+        //     onchange: this.props.onchange,
+        //     inputvalue: this.props.inputvalue,
+        // }
     }
 
     
@@ -18,8 +18,8 @@ class Subcontent extends Component {
         return (
                 <div className="searchField">
                     <div className="searchWrapper">
-                        <input placeholder={this.state.placeholder} onChange={this.state.onchange} value={this.state.inputvalue}></input>
-                        <button onClick={this.state.onclick}>Search</button>
+                        <input placeholder={this.props.placeholder} onChange={this.props.onchange} value={this.props.inputvalue}></input>
+                        <button onClick={this.props.onclick}>Search</button>
                     </div>
                 </div>
         )
