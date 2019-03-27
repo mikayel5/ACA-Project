@@ -23,9 +23,9 @@ class SearchBySong extends Component {
         fetch(`http://ws.audioscrobbler.com/2.0/?method=track.search&track=${this.state.inputvalue}&api_key=49edeb8bf7e07fe071335277a648f207&format=json`)
         .then(res => res.json())
         .then(myJson => 
-            {
+
                 myJson.results.trackmatches.track[0].name
-            }
+
             )
         .then(function(name) {
             this.setState({iframeTitle: this.name})
