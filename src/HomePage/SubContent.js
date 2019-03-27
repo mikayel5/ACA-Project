@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './css/Header.css';
 
 class Subcontent extends Component {
+<<<<<<< Updated upstream
     constructor(props) {
         super(props);
         this.state = {
@@ -11,6 +12,8 @@ class Subcontent extends Component {
             inputvalue: this.props.inputvalue,
         }
     }
+=======
+>>>>>>> Stashed changes
 
     
 

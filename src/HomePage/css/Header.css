@@ -16,6 +16,22 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+<<<<<<< Updated upstream
+=======
+    /*background: url("../../img/bg.png");*/
+    background: #000;
+    background-size: cover;
+}
+
+.header-div .logo-div, .header-div .logo-div i {
+    background: linear-gradient(to right, #FB806B 0%, #AA3A67 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+
+>>>>>>> Stashed changes
 }
 
 .navigation-bar-div button {
@@ -31,7 +47,6 @@ body {
 .navigation-bar-div button:hover {
     color: aqua;
 }
-
 
 .main {
     max-width: 80%;
@@ -49,10 +64,13 @@ body {
     padding: 10px 0;
     width: 33.3%;
     background: transparent;
+<<<<<<< Updated upstream
     border-top: 1px solid green;
     border-left: 1px solid green;
     border-right: 1px solid green;
     border-bottom: none;
+=======
+>>>>>>> Stashed changes
 
 }
 
@@ -72,14 +90,23 @@ body {
 .searchWrapper input, .searchWrapper button {
     padding: 10px;
 }
+
 .searchWrapper input {
     width: 50%;
 }
 
 .searchWrapper button {
+<<<<<<< Updated upstream
+=======
+    background-image: linear-gradient(45deg, #AA3A67, #FB806B);
+    color: #fff;
+    border: none;
+    outline: none;
+>>>>>>> Stashed changes
     width: 25%;
 
 }
+
 /* .aaa {
     width: 100%;
     height: 1000px;
@@ -111,7 +138,16 @@ body {
 }
 
 .active {
+<<<<<<< Updated upstream
     background-color: red;
+=======
+    background-color: #00000042;
+}
+
+.active button {
+    color: #FB806B;
+    font-weight: bold;
+>>>>>>> Stashed changes
 }
 
 .video_container {
@@ -135,9 +171,229 @@ body {
 }
 
 .genres button {
+<<<<<<< Updated upstream
     padding-top: 50px;
     padding-bottom: 50px;
     width: 130px;
     border-radius: 150px;
     margin-right: 50px;
+=======
+    margin: 15px;
+    outline: none;
+    background: #4b223aa1;
+    padding: 10px 10px;
+    text-align: center;
+    color: #fff;
+    border: none;
+    width: 160px;
+    font-size: 20px;
+}
+
+.intro {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.intro-small {
+    color: #fff;
+    font-size: 17px;
+}
+
+.p-title {
+    font-size: 35px;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: bold;
+}
+
+.artist-container {
+    overflow: hidden;
+    clear: both;
+    color: #fff;
+    text-align: justify;
+    background: #0000007d;
+    padding: 20px;
+    margin-top: 20px;
+    font-size: 17px;
+}
+
+.artist_img {
+    margin-right: 20px;
+    float: left;
+    width: 280px;
+    height: 280px;
+    border: solid 4px transparent;
+    border-image: linear-gradient(45deg, #FB806B, #AA3A67);
+    border-image-slice: 1;
+    background: linear-gradient(45deg, #FB806B, #AA3A67);
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.artist_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.asas {
+    position: absolute;
+    top: 20%;
+    right: 0;
+}
+
+.go-youtube {
+    width: 70px;
+    height: 45px;
+    color: #E91E63;
+    font-weight: bold;
+    font-size: 25px;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.song_container .song-item {
+    border: 1px solid #a94f5a;
+    font-size: 20px;
+    background: #060209;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    justify-content: space-between;
+}
+
+.song_container .song-item .artist-img {
+    order: -1;
+    width: 75px;
+    height: 75px;
+}
+
+.song_container .song-item .artist-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.song_container .artist-name,
+.song_container .song-name {
+    width: 30%;
+    text-align: left;
+}
+
+.video-fixed {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.video-fixed button {
+    position: absolute;
+    width: 300px;
+    left: 0;
+    margin: auto;
+    right: 0;
+    background: black;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    text-align: right;
+}
+
+@media screen and (max-width: 768px) {
+    .p-title {
+        font-size: 20px;
+    }
+
+    .logo-div {
+        font-size: 15px !important;
+    }
+
+    .song_container .song-item {
+        font-size: 16px;
+    }
+
+    .tabs {
+        flex-direction: column;
+    }
+
+    .tabs .link {
+        width: 100%;
+    }
+
+    .searchWrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .searchWrapper > input,
+    .searchWrapper > button {
+        width: 100% !important;
+    }
+
+    .artist_img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .artist_img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .song_container .song-item {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        margin: 15px auto;
+    }
+
+    .song_container .artist-name,
+    .song_container .song-name {
+        width: 80%;
+        text-align: center;
+    }
+
+    .song_container .song-item .artist-img {
+        width: 100%;
+        height: 180px;
+    }
+
+    .song_container .song-item .artist-name {
+        font-size: 19px;
+    }
+
+    .tabs {
+        flex-direction: column;
+    }
+
+    .tabs .link {
+        width: 100%;
+    }
+
+    .searchWrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .searchWrapper > {
+        width: 100%;
+    }
+
+    .header-div {
+        flex-direction: column;
+    }
+
+    .navigation-bar-div button {
+        margin-left: 0;
+    }
+>>>>>>> Stashed changes
 }
