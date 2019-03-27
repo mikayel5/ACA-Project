@@ -56,8 +56,7 @@ class SearchBySong extends Component {
                         this.state.videoId.map((id, index) => <Block key={index} title={this.state.iframeTitle}url={`https://www.youtube.com/embed/${id}`}/>)
                     }
                 </div>
-<<<<<<< Updated upstream
-=======
+
                 {
                     this.state.youtubeVideoID  &&  
                     <div className="video-fixed">
@@ -65,7 +64,6 @@ class SearchBySong extends Component {
                         <Block url={`https://www.youtube.com/embed/${ this.state.youtubeVideoID }`}/>
                     </div>
                 }
->>>>>>> Stashed changes
             </>
         )
     }

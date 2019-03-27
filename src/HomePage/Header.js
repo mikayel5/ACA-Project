@@ -7,11 +7,7 @@ class Header extends Component {
         return (
             <div className="header-div">
                 <div className="logo-div">
-<<<<<<< Updated upstream
-                    wlkdhvkjbj
-=======
-                    <i className="fa fa-music"></i> PLUM MUSICFINDER
->>>>>>> Stashed changes
+                    <i className="fa fa-music"></i>
                 </div>
                 <div className="navigation-bar-div">
                     <button>Home</button>

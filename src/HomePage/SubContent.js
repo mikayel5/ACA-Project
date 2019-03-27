@@ -2,14 +2,10 @@ import React, {Component} from 'react';
 import './css/Header.css';
 
 class Subcontent extends Component {
-<<<<<<< Updated upstream
     constructor(props) {
         super(props);
     }
-=======
->>>>>>> Stashed changes
 
-    
 
     render() {
         return (
