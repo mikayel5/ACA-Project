@@ -2,22 +2,16 @@ import React, { Component } from 'react'
 
 class SearchArtistBio extends Component {
     constructor(props) {
-        super(props);
-        this.state = {
-            artistItem_bio: this.props.artistbio,
-            artistItem_img: this.props.artistimg,
-        }
+        super(props)
     }
-
-    
     render() {
         return (
-        <div>
+        <div className="artist-container">
             <div className = "artist_img">
-                <img src={this.state.artistItem_img} />
+                <img src={this.props.artistimg} />
             </div>
             <div className ="atist_bio">
-                <p>{this.state.artistItem_bio}</p>
+                <p>{this.props.artistbio}</p>
             </div>
         </div>
         )
