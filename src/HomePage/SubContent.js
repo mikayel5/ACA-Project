@@ -12,7 +12,7 @@ class Subcontent extends Component {
         return (
                 <div className="searchField">
                     <div className="searchWrapper">
-                        <input placeholder={this.props.placeholder} onChange={this.props.onchange} value={this.props.inputvalue}></input>
+                        <input placeholder={this.props.placeholder} onChange={this.props.onchange} value={this.props.value}></input>
                         <button onClick={this.props.onclick}>Search</button>
                     </div>
                 </div>

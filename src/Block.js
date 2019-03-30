@@ -9,7 +9,7 @@ class Block extends Component{
     render () {
         return ( 
         <>
-            <div className="video-fixed">
+            <div>
                 <iframe title={this.props.title} width="300" height="300"
                     src={this.props.url}
                     frameBorder="0" 

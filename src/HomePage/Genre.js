@@ -26,7 +26,7 @@ class Genre extends Component {
                     videoIdArray.push(data.items[0].id.videoId)
                         return videoIdArray
                     })
-                    .then(videoIdArray => this.setState({videoIdArray,}))
+                    .then(videoIdArray => this.setState({videoIdArray: videoIdArray.slice(0,20)}))
                 })
             }.bind(this)
         )

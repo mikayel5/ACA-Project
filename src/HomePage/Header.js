@@ -7,12 +7,7 @@ class Header extends Component {
         return (
             <div className="header-div">
                 <div className="logo-div">
-                    <span className="fa fa-compact-disc fa-spin"></span>
-                </div>
-                <div className="navigation-bar-div">
-                    <button>Home</button>
-                    <button>About Us</button>
-                    <button>Contact Us</button>
+                    <i className="fa fa-compact-disc fa-spin"></i>
                 </div>
             </div>
         )

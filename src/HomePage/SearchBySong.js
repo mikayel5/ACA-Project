@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import SubContent from './SubContent';
 import SongContainer from './SongContainer';
 import Block from '../Block';
+import './css/Header.css';
 
 
 class SearchBySong extends Component {
@@ -22,7 +23,8 @@ class SearchBySong extends Component {
         this.setState({youtubeVideoID: null})
     }
 
-    foo = (searchText) => {
+    goYoutube = (searchText) => {
+        console.log(searchText)
         fetch(`https://www.googleapis.com/youtube/v3/search?part=id&maxResults=1&order=relevance&q=${searchText}&key=AIzaSyDP7ztlVJ8pjrlFUaCsBMBtbjghLogw2fg`)
                 .then(response => response.json())
                 .then(myJson =>  {
@@ -41,29 +43,31 @@ class SearchBySong extends Component {
                 const track = myJson.results.trackmatches.track; 
                 this.setState({ trackArray: track })
             })
+        .catch(err => alert(err))
     }
 
     render() {
-        console.log(this.state.youtubeVideoID)
         return (
             <> 
-                <SubContent placeholder={this.props.placeholder} onclick={this.searchBySong} onchange={this.getInputValue} value={this.state.inputvalue}/>
+                <SubContent placeholder={this.props.placeholdervalue} onclick={this.searchBySong} onchange={this.getInputValue} value={this.state.inputvalue}/>
                 <div className='song_container'>
                     {
                         this.state.trackArray.map((track, index) => <SongContainer
                                 key={index}
                                 songname={track.name}
                                 artistname={track.artist}
-                                searchYoutube={this.foo}
+                                searchYoutube={this.goYoutube}
                                 artistimg={track.image[2]["#text"]}
                                 />)
                     }
                 </div>
                 {
                     this.state.youtubeVideoID  &&  
-                    <> 
-                        <button onClick={this.closeYoutube}>X</button>
-                        <Block url={`https://www.youtube.com/embed/${ this.state.youtubeVideoID }`}/>
+                    <>
+                        <div className="video-fixed"> 
+                            <button onClick={this.closeYoutube}>X</button>
+                            <Block url={`https://www.youtube.com/embed/${ this.state.youtubeVideoID }`}/>
+                        </div>
                     </>
                 }
             </>
